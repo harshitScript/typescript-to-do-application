@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    background: aliceblue;
+}
+
+.header>h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.section-outer {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 30% 35% 35%;
+}
+
+.section-outer > section {
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
