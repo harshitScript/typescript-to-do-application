@@ -1,3 +1,4 @@
+import TodoStatus from "../enums/TodoStatus.js";
 import TodoItem from "./TodoItem.js";
 
 class State {
@@ -12,6 +13,13 @@ class State {
     }
     addTodo(todo: TodoItem) {
         this.todoList.push(todo);
+    }
+    modifyStatus(id: string) {
+        this.todoList.forEach(todo => {
+            if (todo.id === id) {
+                todo.status = TodoStatus.FINISHED
+            }
+        })
     }
 }
 const state = State.getInstance();

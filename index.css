@@ -58,3 +58,7 @@ button {
     list-style-type: none;
     border-radius: 0.5rem;
 }
+
+.droppable {
+    background: aliceblue;
+}

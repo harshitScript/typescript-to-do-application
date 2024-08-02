@@ -4,8 +4,13 @@ import TodoStatus from "../enums/TodoStatus.js";
 function renderList(type: TodoStatus) {
     let list: HTMLUListElement = <HTMLUListElement>document.querySelector(`#${type === 0 ? 'active-todo-list' : 'finished-todo-list'}`)!;
     list.innerHTML = ''
+
     for (const todoItem of state.todoList) {
-        if(todoItem.status === type){
+        function dargStart(e: DragEvent) {
+            e.dataTransfer!.setData('text/plain', todoItem.id);
+            e.dataTransfer!.effectAllowed = 'move';
+        }
+        if (todoItem.status === type) {
             const listItem = document.createElement('li');
             const h2Element = document.createElement('h2');
             const spanElement = document.createElement('span');
@@ -19,6 +24,7 @@ function renderList(type: TodoStatus) {
             listItem.appendChild(h2Element);
             listItem.appendChild(spanElement);
             listItem.appendChild(pElement);
+            listItem.addEventListener('dragstart', dargStart)
             list.appendChild(listItem);
         }
     }

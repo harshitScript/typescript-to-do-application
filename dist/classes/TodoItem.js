@@ -6,6 +6,7 @@ class TodoItem {
         this.date = date;
         this.color = color;
         this.status = TodoStatus.ACTIVE;
+        this.id = Math.random().toString();
     }
 }
 export default TodoItem;

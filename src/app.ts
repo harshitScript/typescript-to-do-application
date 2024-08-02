@@ -8,6 +8,7 @@ const titleInput = <HTMLInputElement>document.querySelector('#title')!
 const descriptionInput = <HTMLTextAreaElement>document.querySelector('#description')!
 const dateInput = <HTMLInputElement>document.querySelector('#date')!
 const colorInput = <HTMLInputElement>document.querySelector('#color')!
+const droppableElement = <HTMLElement>document.querySelector('#droppable-area')!
 
 //? Event listners
 function submitHandler(event: SubmitEvent): void {
@@ -22,8 +23,26 @@ function submitHandler(event: SubmitEvent): void {
     renderList(1); //? finished list
     clearInput();
 }
+function dragOver(e: DragEvent) {
+    e.preventDefault() //? to prevent the default behaviour of not allowing dropping.
+    if (e.dataTransfer && e.dataTransfer!.types[0] === 'text/plain') {
+        droppableElement.classList.add('droppable');
+    }
+}
+function dragLeave(e: DragEvent) {
+    if (e.dataTransfer && e.dataTransfer!.types[0] === 'text/plain') {
+        droppableElement.classList.remove('droppable');
+    }
+}
+function drop(e: DragEvent) {
+    if (e.dataTransfer && e.dataTransfer!.types[0] === 'text/plain') {
+        state.modifyStatus(e.dataTransfer.getData('text/plain'));
+        renderList(0);
+        renderList(1);
+    }
+}
 
-function clearInput(){
+function clearInput() {
     titleInput.value = '';
     descriptionInput.value = '';
     dateInput.value = '';
@@ -31,4 +50,7 @@ function clearInput(){
 }
 
 
-formElement.addEventListener("submit", submitHandler)
+formElement.addEventListener("submit", submitHandler);
+droppableElement.addEventListener('dragover', dragOver);
+droppableElement.addEventListener('dragleave', dragLeave);
+droppableElement.addEventListener('drop', drop)
