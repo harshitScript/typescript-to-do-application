@@ -9,7 +9,6 @@ const dateInput = document.querySelector('#date');
 const colorInput = document.querySelector('#color');
 //? Event listners
 function submitHandler(event) {
-    console.log(event);
     event.preventDefault();
     const title = titleInput.value;
     const description = descriptionInput.value;

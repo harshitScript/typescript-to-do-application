@@ -11,7 +11,6 @@ const colorInput = <HTMLInputElement>document.querySelector('#color')!
 
 //? Event listners
 function submitHandler(event: SubmitEvent): void {
-    console.log(event)
     event.preventDefault();
     const title = titleInput.value;
     const description = descriptionInput.value;
