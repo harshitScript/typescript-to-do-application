@@ -17,5 +17,13 @@ function submitHandler(event) {
     const todoItem = new TodoItem(title, description, new Date(date), color);
     state.addTodo(todoItem);
     renderList(0); //? active list
+    renderList(1); //? finished list
+    clearInput();
+}
+function clearInput() {
+    titleInput.value = '';
+    descriptionInput.value = '';
+    dateInput.value = '';
+    colorInput.value = '';
 }
 formElement.addEventListener("submit", submitHandler);
