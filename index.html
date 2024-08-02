@@ -14,9 +14,46 @@
         <h1>TODO APPLICATION</h1>
     </div>
     <div class="section-outer">
-        <section>Form Section</section>
-        <section>Active Todo</section>
-        <section>Finished Todo</section>
+        <section>
+            <h3 style="margin: 0; text-align: center;">TODO FORM</h3>
+            <form id="todo-input-form" class="todo-form">
+                <div class="form-element">
+                    <input id="title" type="text" placeholder="enter title" />
+                </div>
+                <div class="form-element">
+                    <textarea id="description" rows="5"></textarea>
+                </div>
+                <div class="form-element">
+                    <input id="date" type="date" placeholder="enter title" />
+                </div>
+                <div class="form-element">
+                    <input id="color" type="color" placeholder="choose color" />
+                </div>
+                <div class="form-element">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </section>
+        <section class="active-todo-outer">
+            <h3 style="margin: 0; text-align: center;">ACTIVE TODO LIST</h3>
+            <ul id="active-todo-list">
+                <li>
+                    <h2></h2>
+                    <span></span>
+                    <p></p>
+                </li>
+            </ul>
+        </section>
+        <section class="finished-todo-outer">
+            <h3 style="margin: 0; text-align: center;">FINISHED TODO LIST</h3>
+            <ul id="finished-todo-list">
+                <li>
+                    <h2></h2>
+                    <span></span>
+                    <p></p>
+                </li>
+            </ul>
+        </section>
     </div>
 </body>
 
