@@ -7,9 +7,9 @@ const titleInput = document.querySelector('#title');
 const descriptionInput = document.querySelector('#description');
 const dateInput = document.querySelector('#date');
 const colorInput = document.querySelector('#color');
-const finishedList = document.querySelector('#finished-todo-list');
 //? Event listners
 function submitHandler(event) {
+    console.log(event);
     event.preventDefault();
     const title = titleInput.value;
     const description = descriptionInput.value;

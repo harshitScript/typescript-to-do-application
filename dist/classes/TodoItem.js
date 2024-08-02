@@ -1,4 +1,4 @@
-import TodoStatus from "../enums/TodoStatus";
+import TodoStatus from "../enums/TodoStatus.js";
 class TodoItem {
     constructor(title, description, date, color) {
         this.title = title;

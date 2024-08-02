@@ -1,4 +1,4 @@
-import state from "../classes/State";
+import state from "../classes/State.js";
 function renderList(type) {
     let list = document.querySelector(`#${type === 0 ? 'active-todo-list' : 'finished-todo-list'}`);
     list.innerHTML = '';
