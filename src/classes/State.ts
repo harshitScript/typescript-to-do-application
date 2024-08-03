@@ -1,5 +1,5 @@
-import TodoStatus from "../enums/TodoStatus.js";
-import TodoItem from "./TodoItem.js";
+import TodoStatus from "../enums/TodoStatus";
+import TodoItem from "./TodoItem";
 
 class State {
     todoList: TodoItem[] = [];

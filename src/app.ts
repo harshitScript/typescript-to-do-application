@@ -1,6 +1,6 @@
-import state from "./classes/State.js";
-import TodoItem from "./classes/TodoItem.js";
-import renderList from "./components/renderList.js";
+import state from "./classes/State";
+import TodoItem from "./classes/TodoItem";
+import renderList from "./components/renderList";
 
 //? Variables
 const formElement = <HTMLFormElement>document.querySelector('#todo-input-form')!;

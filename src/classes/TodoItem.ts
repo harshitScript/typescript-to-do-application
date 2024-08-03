@@ -1,4 +1,4 @@
-import TodoStatus from "../enums/TodoStatus.js"
+import TodoStatus from "../enums/TodoStatus"
 
 class TodoItem {
     status: TodoStatus
